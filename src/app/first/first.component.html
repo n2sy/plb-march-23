@@ -1,0 +1,17 @@
+<h3>Interpolation : Je suis {{ prenom }} chez {{ cabinet }}</h3>
+
+Property Binding
+<div [hidden]="hd" [style.backgroundColor]="color">
+    Formation en Angular
+</div>
+
+Event Binding
+<button (click)="toggleDiv()">Toggle Div</button>
+<br>
+
+2-way Binding
+<input type="text" [(ngModel)]="prenom">
+
+<hr>
+
+<app-child (msgToParent)="RecupererMessage($event)" [cl]="'green'"></app-child>
