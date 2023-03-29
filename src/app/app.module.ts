@@ -10,9 +10,22 @@ import { DetailsComponent } from './details/details.component';
 import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DirectComponent } from './direct/direct.component';
+import { MsWordComponent } from './ms-word/ms-word.component';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, DetailsComponent, ListeComponent, ItemComponent, DirectComponent],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    ChildComponent,
+    CvComponent,
+    DetailsComponent,
+    ListeComponent,
+    ItemComponent,
+    DirectComponent,
+    MsWordComponent,
+    ManageServersComponent,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
