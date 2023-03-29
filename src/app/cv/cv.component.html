@@ -1,1 +1,10 @@
-<p>cv works!</p>
+<div class="row">
+    <div class="col-md-5">
+        <app-liste (candToCV)="recupSelectedCand($event)" [tabCandidats]="allCandidats"></app-liste>
+
+    </div>
+    <div class="col-md-7">
+        <app-details [selCandidat]="selectedCand"></app-details>
+
+    </div>
+</div>

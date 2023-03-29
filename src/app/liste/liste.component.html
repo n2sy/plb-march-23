@@ -1,1 +1,5 @@
-<p>liste works!</p>
+<ol class="list-group">
+    <app-item (candToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[0]"></app-item>
+    <app-item (candToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[1]"></app-item>
+    <app-item (candToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[2]"></app-item>
+</ol>
