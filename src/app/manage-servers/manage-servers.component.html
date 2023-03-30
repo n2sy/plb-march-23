@@ -1,6 +1,6 @@
 <ol class="list-group">
     <li [ngClass]="affecterClasse(serv.statut)" class="list-group-item" *ngFor="let serv of tabServers">
-        {{ serv.nom}} | {{ serv.type }} | {{ serv.date }}
+        {{ serv.nom | short:10}} | {{ serv.type | titlecase }} | {{ serv.date | date:'full' | uppercase }}
         <span class="badge bg-secondary">{{ serv.statut }}</span>
 
     </li>

@@ -8,25 +8,25 @@ import { Component } from '@angular/core';
 export class ManageServersComponent {
   tabServers = [
     {
-      nom: 'Server 1',
+      nom: 'Test Development Server',
       type: 'small',
       date: new Date(),
-      statut: 'stable',
+      statut: 'critical',
     },
     {
-      nom: 'Server 2',
+      nom: 'Unit testing Server',
       type: 'large',
       date: new Date(),
       statut: 'stable',
     },
     {
-      nom: 'Server 3',
+      nom: 'Deployment test Server',
       type: 'small',
       date: new Date(),
-      statut: 'stable',
+      statut: 'offline',
     },
     {
-      nom: 'Server 4',
+      nom: 'Nidhal Server',
       type: 'medium',
       date: new Date(),
       statut: 'stable',
