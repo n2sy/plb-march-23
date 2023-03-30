@@ -29,6 +29,10 @@ const myRoutes: Routes = [
   //   ],
   // },
   { path: 'accounts', component: HomeAccountsComponent },
+  {
+    path: 'servers',
+    loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
+  },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
