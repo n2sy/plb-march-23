@@ -15,6 +15,10 @@ export class ListeCandidatsService {
     return this.tab;
   }
 
+  getCandidatById(id) {
+    return this.tab.find((element) => element._id == id);
+  }
+
   addCandidat(newCand) {
     this.tab.push(newCand);
   }

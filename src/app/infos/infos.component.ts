@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Candidat } from '../models/candidat';
+import { ListeCandidatsService } from '../services/liste-candidats.service';
 
 @Component({
   selector: 'app-infos',
@@ -7,7 +9,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./infos.component.css'],
 })
 export class InfosComponent {
-  constructor(private ActivatedRoute: ActivatedRoute) {}
+  cand: Candidat;
+  constructor(
+    private ActivatedRoute: ActivatedRoute,
+    private candSer: ListeCandidatsService
+  ) {}
 
   ngOnInit() {
     // console.log(this.ActivatedRoute.snapshot.params['id']);
@@ -16,6 +22,9 @@ export class InfosComponent {
     this.ActivatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         console.log(p.get('id'));
+
+        this.cand = this.candSer.getCandidatById(p.get('id'));
+        console.log(this.cand);
       },
     });
   }

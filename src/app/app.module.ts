@@ -24,6 +24,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { PLB_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InfosComponent } from './infos/infos.component';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { InfosComponent } from './infos/infos.component';
     AccueilComponent,
     NavbarComponent,
     InfosComponent,
+    AddComponent,
+    EditComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, PLB_ROUTING],
   providers: [],
