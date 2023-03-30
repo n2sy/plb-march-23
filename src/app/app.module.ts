@@ -20,6 +20,10 @@ import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
 import { FirstService } from './services/first.service';
 import { RecruesComponent } from './recrues/recrues.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { PLB_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +44,11 @@ import { RecruesComponent } from './recrues/recrues.component';
     ShortPipe,
     FilterPipe,
     RecruesComponent,
+    AccueilComponent,
+    NavbarComponent,
+    InfosComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, PLB_ROUTING],
   providers: [],
   bootstrap: [AppComponent],
 })
