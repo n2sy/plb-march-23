@@ -17,6 +17,7 @@ import { ItemAccountComponent } from './accounts/item-account/item-account.compo
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
 import { CustomDirDirective } from './custom-dir.directive';
 import { ShortPipe } from './short.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ShortPipe } from './short.pipe';
     AddAccountComponent,
     CustomDirDirective,
     ShortPipe,
+    FilterPipe,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
