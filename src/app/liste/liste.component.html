@@ -1,3 +1,5 @@
 <ol class="list-group">
     <app-item *ngFor="let cand of tabCandidats" (candToListe)="sendToCv($event)" [oneCandidat]="cand"></app-item>
 </ol>
+
+<button (click)="showList()" class="btn btn-info">Cands from List</button>

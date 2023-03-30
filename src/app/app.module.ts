@@ -18,6 +18,7 @@ import { AddAccountComponent } from './accounts/add-account/add-account.componen
 import { CustomDirDirective } from './custom-dir.directive';
 import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
+import { FirstService } from './services/first.service';
 
 @NgModule({
   declarations: [
