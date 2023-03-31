@@ -1,13 +1,15 @@
 <form #f="ngForm" (ngSubmit)="submitHandler(f)">
+    <div *ngIf="showError" class="alert alert-danger">Identifiants invalides</div>
+
     <label for="log">Login</label>
-    <input #log="ngModel" ngModel type="text" required email class="form-control" name="login" id="log">
+    <input #log="ngModel" ngModel type="text" required email class="form-control" name="email" id="log">
     <div *ngIf="log.invalid && log.touched" class="alert alert-danger">Saisissez une adresse mail valide</div>
 
     <label for="">Mot de passe</label>
     <input #pwd="ngModel" ngModel minlength="4" type="text" name="password" class="form-control">
-    <div *ngIf="pwd.valid && pwd.touched" class="alert alert-success">Mot de passe accepté</div>
+    <!-- <div *ngIf="pwd.valid && pwd.touched" class="alert alert-success">Mot de passe accepté</div> -->
 
-    <label for="">Exemple d'erreurs</label>
+    <!-- <label for="">Exemple d'erreurs</label>
     <input #exp="ngModel" type="text" ngModel name="exemple" required minlength="6" pattern="nidhal"
         class="form-control">
     <div *ngIf="exp.invalid" class="alert alert-danger">
@@ -27,13 +29,13 @@
         <textarea [(ngModel)]="myComment" class="form-control" name="commentaire" cols="5" rows="3"></textarea>
         {{ myComment }}
 
-    </div>
+    </div> -->
 
     <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Submit</button>
-
+    <!-- 
     <pre>
         {{ f.value | json}}
-    </pre>
+    </pre> -->
 </form>
 
 <!-- {

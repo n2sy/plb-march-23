@@ -30,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { INTERCEPTOR_PROVIDER } from './add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { HttpClientModule } from '@angular/common/http';
     PLB_ROUTING,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
