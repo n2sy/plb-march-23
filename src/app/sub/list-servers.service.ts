@@ -23,4 +23,7 @@ export class ListServersService {
   ];
 
   constructor() {}
+  findServer(id) {
+    return this.tabServers.find((s) => s.id == id);
+  }
 }

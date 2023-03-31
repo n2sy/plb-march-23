@@ -1,1 +1,10 @@
-<p>info-servers works!</p>
+<div class="container">
+    <label for="">Nom du serveur</label>
+    <input [value]="selectedServ.nom" type="text" class="form-control">
+
+    <label for="">Statut</label>
+    <input [value]="selectedServ.type" type="text" class="form-control">
+    <br>
+    <button routerLink="edit" [disabled]="showBtn" class="btn btn-info">Editer</button>
+
+</div>

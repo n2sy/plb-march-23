@@ -1,0 +1,47 @@
+<form #f="ngForm" (ngSubmit)="submitHandler(f)">
+    <label for="log">Login</label>
+    <input #log="ngModel" ngModel type="text" required email class="form-control" name="login" id="log">
+    <div *ngIf="log.invalid && log.touched" class="alert alert-danger">Saisissez une adresse mail valide</div>
+
+    <label for="">Mot de passe</label>
+    <input #pwd="ngModel" ngModel minlength="4" type="text" name="password" class="form-control">
+    <div *ngIf="pwd.valid && pwd.touched" class="alert alert-success">Mot de passe accepté</div>
+
+    <label for="">Exemple d'erreurs</label>
+    <input #exp="ngModel" type="text" ngModel name="exemple" required minlength="6" pattern="nidhal"
+        class="form-control">
+    <div *ngIf="exp.invalid" class="alert alert-danger">
+        <p *ngIf="exp.errors['required']">Ce champ est required</p>
+        <p *ngIf="exp.errors['minlength']">Le nombre de caractères minimum est 6</p>
+        <p *ngIf="exp.errors['pattern']">Le pattern est "nidhal"</p>
+    </div>
+
+    <div #infosDiv="ngModelGroup" ngModelGroup="infos">
+
+        <label for="alexis">Profil</label>
+        <select class="form-control" [ngModel]="defaultSpecialite" name="profil" id="alexis">
+            <option *ngFor="let spec of specialites" [value]="spec">{{spec}}</option>
+        </select>
+
+        <label for="">Commentaire</label>
+        <textarea [(ngModel)]="myComment" class="form-control" name="commentaire" cols="5" rows="3"></textarea>
+        {{ myComment }}
+
+    </div>
+
+    <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+    <pre>
+        {{ f.value | json}}
+    </pre>
+</form>
+
+<!-- {
+    "login": "",
+    "password": "",
+    "infos" : {
+        "profil": "front-end",
+        "commentaire": "RAS..."
+
+    }
+  } -->
