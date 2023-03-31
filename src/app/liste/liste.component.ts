@@ -6,7 +6,6 @@ import { ListeCandidatsService } from '../services/liste-candidats.service';
   selector: 'app-liste',
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css'],
-  providers: [ListeCandidatsService],
 })
 export class ListeComponent {
   tabCandidats: Candidat[] = [];

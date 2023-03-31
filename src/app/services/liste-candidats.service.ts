@@ -20,7 +20,18 @@ export class ListeCandidatsService {
   }
 
   addCandidat(newCand) {
+    newCand._id = Math.random().toLocaleString();
     this.tab.push(newCand);
+  }
+
+  deleteCandidat(cand) {
+    let i = this.tab.indexOf(cand);
+    this.tab.splice(i, 1);
+  }
+
+  updateCandidat(uCand) {
+    let i = this.tab.indexOf(uCand);
+    this.tab[i] = uCand;
   }
   constructor() {}
 }

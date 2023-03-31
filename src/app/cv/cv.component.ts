@@ -31,9 +31,9 @@ export class CvComponent {
     console.log(this.lstCand.getAllCandidats());
   }
 
-  addCandidat() {
-    this.lstCand.addCandidat(
-      new Candidat('1', 'NEW', 'Candidat', 20, 'Ingénieur', 'bart.jpeg')
-    );
-  }
+  // addCandidat() {
+  //   this.lstCand.addCandidat(
+  //     new Candidat('1', 'NEW', 'Candidat', 20, 'Ingénieur', 'bart.jpeg')
+  //   );
+  // }
 }
