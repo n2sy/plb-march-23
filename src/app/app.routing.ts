@@ -8,6 +8,7 @@ import { InfosComponent } from './infos/infos.component';
 import { LoginComponent } from './login/login.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },

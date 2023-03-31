@@ -20,7 +20,14 @@ export class CvComponent {
 
   ngOnInit() {
     this.firstSer.showInfos();
-    this.allCandidats = this.lstCand.getAllCandidats();
+    this.lstCand.getAllCandidatsAPI().subscribe({
+      next: (response) => {
+        this.allCandidats = response;
+      },
+      error: (err) => {
+        console.log('Erreur avec getallCandidats');
+      },
+    });
   }
 
   recupSelectedCand(cand) {

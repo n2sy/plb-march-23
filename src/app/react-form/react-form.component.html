@@ -1,0 +1,22 @@
+<div class="container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <label for="">Username</label>
+        <input type="text" class="form-control" formControlName="username">
+        <label for="">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+
+        <div *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched" class="alert alert-danger">
+            Saisissez une adresse mail valide</div>
+
+        <div formArrayName="skills">
+            <h4>Your Skills</h4>
+            <button (click)="addSkill()" class="btn btn-primary">Add Skill</button>
+            <div class="form-group" *ngFor="let skill of FormsSkills.controls">
+                <input type="text" class="form-control" [formControl]="$any(skill)">
+            </div>
+
+        </div>
+        <br><br>
+        <button class="btn btn-info" type="submit">Submit</button>
+    </form>
+</div>

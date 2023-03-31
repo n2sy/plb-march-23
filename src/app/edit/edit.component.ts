@@ -18,14 +18,27 @@ export class EditComponent {
   ngOnInit() {
     this.ActivatedRoute.paramMap.subscribe({
       next: (p) => {
-        this.editedCand = this.candSer.getCandidatById(p.get('id'));
-        console.log(this.editedCand);
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (response) => {
+            this.editedCand = response;
+          },
+          error: (err) => {
+            console.log('Erreur avec getById');
+          },
+        });
       },
     });
   }
 
   onSubmit(candidatUpdated) {
-    this.candSer.updateCandidat(candidatUpdated);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(this.editedCand).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log('Erreur avec update');
+      },
+    });
   }
 }

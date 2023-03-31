@@ -9,7 +9,7 @@ import { ListeCandidatsService } from '../services/liste-candidats.service';
   styleUrls: ['./infos.component.css'],
 })
 export class InfosComponent {
-  cand: Candidat;
+  cand;
   constructor(
     private ActivatedRoute: ActivatedRoute,
     private router: Router,
@@ -24,16 +24,32 @@ export class InfosComponent {
       next: (p: ParamMap) => {
         console.log(p.get('id'));
 
-        this.cand = this.candSer.getCandidatById(p.get('id'));
-        console.log(this.cand);
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (response) => {
+            this.cand = response;
+          },
+          error: (err) => {
+            console.log('Erreur avec getById');
+          },
+        });
+      },
+      error: (err) => {
+        console.log('Erreur avec ParamMap');
       },
     });
   }
 
   onDelete() {
     if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
-      this.candSer.deleteCandidat(this.cand);
-      this.router.navigateByUrl('/cv');
+      this.candSer.deleteCandidatAPI(this.cand).subscribe({
+        next: (response) => {
+          alert(response['message']);
+          this.router.navigateByUrl('/cv');
+        },
+        error: (err) => {
+          console.log('Erreur avec Delete');
+        },
+      });
     }
   }
 }

@@ -8,7 +8,7 @@ import { ListeCandidatsService } from '../services/liste-candidats.service';
   styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent {
-  tabCandidats: Candidat[] = [];
+  @Input() tabCandidats: Candidat[] = [];
   @Output() candToCV = new EventEmitter();
 
   constructor(private candSer: ListeCandidatsService) {}

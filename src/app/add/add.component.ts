@@ -11,7 +11,14 @@ export class AddComponent {
   constructor(private candSer: ListeCandidatsService, private router: Router) {}
   onSubmit(newCand) {
     console.log(newCand);
-    this.candSer.addCandidat(newCand);
-    this.router.navigateByUrl('/cv');
+    this.candSer.addCandidatAPI(newCand).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log('Erreur avec Add Candidat');
+      },
+    });
   }
 }
